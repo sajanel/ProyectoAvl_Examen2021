@@ -217,37 +217,7 @@ namespace ProyectoAvl_Examen.Estructuras_Arbol
         //Este es el metodo implementado para buscar en todo el arbol el dato
         //Este retorna un tostring idfirstIdAlumno+"-"+secondIdAlumno+" " + nombreAlumno + ",";
         //El id lo dividi para la insercion y busqueda sean mas sencilla
-        public string buscarlo(Object buscado)
-        {
-            Comparador dato;
-            dato = (Comparador)buscado;
-            if (arbolRaiz == null)
-                return null;
-            else
-               
-                return rcPreorden(raizArbol(), dato);
-        }
 
-
-        //Este metodo recursivo tiene la capacidad de recorrer todo el arbol
-        //Y me retorna la informacion que yo compare.
-        //El tipo de busque que yo realice es de tipo Preorden
-        static public string rcPreorden(Nodo r,Comparador dato)
-        {
-            if (r != null)
-            { 
-                 if (dato.CorreoDiferente(r.valorNodo()))
-                    return rcPreorden(r.subarbolIzq(), dato) + rcPreorden(r.subarbolDch(), dato);
-                
-                else if (dato.CorreoIgual(r.valorNodo()))
-                {
-                    return r.visitarNodo();
-                 
-                }
-
-            }
-            return "";
-        }
         
     }
 }

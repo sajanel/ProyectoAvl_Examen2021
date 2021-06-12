@@ -43,6 +43,7 @@ namespace ProyectoAvl_Examen
             this.btnCargar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -50,10 +51,6 @@ namespace ProyectoAvl_Examen
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblAprobacion = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtPromedio = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtLab4 = new System.Windows.Forms.TextBox();
             this.txtLab3 = new System.Windows.Forms.TextBox();
@@ -70,7 +67,6 @@ namespace ProyectoAvl_Examen
             this.label2 = new System.Windows.Forms.Label();
             this.txtSecondId = new System.Windows.Forms.TextBox();
             this.txtFirstId = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,35 +80,34 @@ namespace ProyectoAvl_Examen
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(107)))), ((int)(((byte)(153)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 505);
+            this.panel1.Size = new System.Drawing.Size(12, 475);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(107)))), ((int)(((byte)(153)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(938, 0);
+            this.panel2.Location = new System.Drawing.Point(965, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 505);
+            this.panel2.Size = new System.Drawing.Size(12, 475);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(107)))), ((int)(((byte)(153)))));
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(12, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(926, 12);
+            this.panel3.Size = new System.Drawing.Size(953, 12);
             this.panel3.TabIndex = 2;
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(84)))));
+            this.panel5.BackColor = System.Drawing.Color.SlateGray;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.bntOrden);
@@ -125,7 +120,7 @@ namespace ProyectoAvl_Examen
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(12, 12);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(458, 481);
+            this.panel5.Size = new System.Drawing.Size(467, 451);
             this.panel5.TabIndex = 4;
             // 
             // pictureBox3
@@ -140,14 +135,15 @@ namespace ProyectoAvl_Examen
             // 
             // bntOrden
             // 
-            this.bntOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.bntOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.bntOrden.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.bntOrden.FlatAppearance.BorderSize = 0;
             this.bntOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntOrden.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bntOrden.ForeColor = System.Drawing.Color.White;
             this.bntOrden.Location = new System.Drawing.Point(275, 149);
             this.bntOrden.Name = "bntOrden";
-            this.bntOrden.Size = new System.Drawing.Size(79, 23);
+            this.bntOrden.Size = new System.Drawing.Size(79, 32);
             this.bntOrden.TabIndex = 20;
             this.bntOrden.Text = "En Orden";
             this.bntOrden.UseVisualStyleBackColor = false;
@@ -155,14 +151,15 @@ namespace ProyectoAvl_Examen
             // 
             // btnPostOrden
             // 
-            this.btnPostOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnPostOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.btnPostOrden.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnPostOrden.FlatAppearance.BorderSize = 0;
             this.btnPostOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostOrden.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPostOrden.ForeColor = System.Drawing.Color.White;
             this.btnPostOrden.Location = new System.Drawing.Point(178, 149);
             this.btnPostOrden.Name = "btnPostOrden";
-            this.btnPostOrden.Size = new System.Drawing.Size(75, 23);
+            this.btnPostOrden.Size = new System.Drawing.Size(75, 32);
             this.btnPostOrden.TabIndex = 19;
             this.btnPostOrden.Text = "PostOrden";
             this.btnPostOrden.UseVisualStyleBackColor = false;
@@ -173,21 +170,22 @@ namespace ProyectoAvl_Examen
             this.listBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(56, 187);
+            this.listBox1.Location = new System.Drawing.Point(71, 187);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(298, 242);
             this.listBox1.TabIndex = 18;
             // 
             // btnPreorden
             // 
-            this.btnPreorden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnPreorden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.btnPreorden.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnPreorden.FlatAppearance.BorderSize = 0;
             this.btnPreorden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPreorden.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPreorden.ForeColor = System.Drawing.Color.White;
             this.btnPreorden.Location = new System.Drawing.Point(82, 149);
             this.btnPreorden.Name = "btnPreorden";
-            this.btnPreorden.Size = new System.Drawing.Size(75, 23);
+            this.btnPreorden.Size = new System.Drawing.Size(75, 32);
             this.btnPreorden.TabIndex = 17;
             this.btnPreorden.Text = "Preorden";
             this.btnPreorden.UseVisualStyleBackColor = false;
@@ -204,14 +202,15 @@ namespace ProyectoAvl_Examen
             // 
             // btnCargar
             // 
-            this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.btnCargar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnCargar.FlatAppearance.BorderSize = 0;
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCargar.ForeColor = System.Drawing.Color.White;
-            this.btnCargar.Location = new System.Drawing.Point(332, 69);
+            this.btnCargar.Location = new System.Drawing.Point(333, 64);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.Size = new System.Drawing.Size(75, 32);
             this.btnCargar.TabIndex = 16;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
@@ -220,17 +219,19 @@ namespace ProyectoAvl_Examen
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BackColor = System.Drawing.Color.SlateGray;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(149, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 21);
+            this.label1.Size = new System.Drawing.Size(148, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cargar estudiante";
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(84)))));
+            this.panel6.BackColor = System.Drawing.Color.SlateGray;
+            this.panel6.Controls.Add(this.txtCorreo);
             this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Controls.Add(this.pictureBox5);
@@ -238,10 +239,6 @@ namespace ProyectoAvl_Examen
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.lblAprobacion);
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.txtPromedio);
-            this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.btnBuscar);
             this.panel6.Controls.Add(this.txtLab4);
             this.panel6.Controls.Add(this.txtLab3);
@@ -258,22 +255,33 @@ namespace ProyectoAvl_Examen
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.txtSecondId);
             this.panel6.Controls.Add(this.txtFirstId);
-            this.panel6.Controls.Add(this.txtEmail);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(480, 12);
+            this.panel6.Location = new System.Drawing.Point(493, 12);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(458, 481);
+            this.panel6.Size = new System.Drawing.Size(472, 451);
             this.panel6.TabIndex = 5;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtCorreo.Enabled = false;
+            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(188, 150);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.PlaceholderText = "Correo@miumg.edu.gt";
+            this.txtCorreo.Size = new System.Drawing.Size(233, 23);
+            this.txtCorreo.TabIndex = 28;
+            this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(349, 391);
+            this.button1.Location = new System.Drawing.Point(346, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 27;
@@ -284,7 +292,7 @@ namespace ProyectoAvl_Examen
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(27, 395);
+            this.pictureBox6.Location = new System.Drawing.Point(27, 358);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(36, 39);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -334,66 +342,23 @@ namespace ProyectoAvl_Examen
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(168, 13);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(150, 21);
+            this.label12.Size = new System.Drawing.Size(144, 19);
             this.label12.TabIndex = 21;
             this.label12.Text = "Buscar estudiante";
             // 
-            // lblAprobacion
-            // 
-            this.lblAprobacion.AutoSize = true;
-            this.lblAprobacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAprobacion.ForeColor = System.Drawing.Color.White;
-            this.lblAprobacion.Location = new System.Drawing.Point(191, 445);
-            this.lblAprobacion.Name = "lblAprobacion";
-            this.lblAprobacion.Size = new System.Drawing.Size(71, 16);
-            this.lblAprobacion.TabIndex = 19;
-            this.lblAprobacion.Text = "Resultado\r\n";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(69, 445);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 17);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Resultado";
-            // 
-            // txtPromedio
-            // 
-            this.txtPromedio.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtPromedio.Enabled = false;
-            this.txtPromedio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPromedio.Location = new System.Drawing.Point(188, 396);
-            this.txtPromedio.Name = "txtPromedio";
-            this.txtPromedio.PlaceholderText = "Promedio total";
-            this.txtPromedio.Size = new System.Drawing.Size(120, 23);
-            this.txtPromedio.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(69, 403);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 17);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Promedio";
-            // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(131)))), ((int)(((byte)(184)))));
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(201)))), ((int)(((byte)(134)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(325, 95);
+            this.btnBuscar.Location = new System.Drawing.Point(315, 75);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 28);
             this.btnBuscar.TabIndex = 15;
@@ -482,6 +447,7 @@ namespace ProyectoAvl_Examen
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.SlateGray;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(67, 280);
@@ -493,6 +459,7 @@ namespace ProyectoAvl_Examen
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.SlateGray;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(69, 241);
@@ -504,6 +471,7 @@ namespace ProyectoAvl_Examen
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SlateGray;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(69, 192);
@@ -516,8 +484,8 @@ namespace ProyectoAvl_Examen
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(234, 133);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(191, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 37);
             this.label4.TabIndex = 4;
@@ -526,74 +494,64 @@ namespace ProyectoAvl_Examen
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SlateGray;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(69, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 17);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "id Estudiante";
+            this.label3.Text = "Correo ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SlateGray;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(69, 69);
+            this.label2.Location = new System.Drawing.Point(27, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "E-mail";
+            this.label2.Text = "Id Estudiante";
             // 
             // txtSecondId
             // 
-            this.txtSecondId.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSecondId.Enabled = false;
-            this.txtSecondId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSecondId.Location = new System.Drawing.Point(264, 142);
+            this.txtSecondId.BackColor = System.Drawing.Color.White;
+            this.txtSecondId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSecondId.Location = new System.Drawing.Point(225, 78);
             this.txtSecondId.Name = "txtSecondId";
             this.txtSecondId.PlaceholderText = "cárnet";
-            this.txtSecondId.Size = new System.Drawing.Size(54, 23);
+            this.txtSecondId.Size = new System.Drawing.Size(66, 27);
             this.txtSecondId.TabIndex = 2;
             this.txtSecondId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtFirstId
             // 
-            this.txtFirstId.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtFirstId.Enabled = false;
-            this.txtFirstId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFirstId.Location = new System.Drawing.Point(191, 142);
+            this.txtFirstId.BackColor = System.Drawing.Color.White;
+            this.txtFirstId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFirstId.Location = new System.Drawing.Point(144, 78);
             this.txtFirstId.Name = "txtFirstId";
             this.txtFirstId.PlaceholderText = "Año";
-            this.txtFirstId.Size = new System.Drawing.Size(41, 23);
+            this.txtFirstId.Size = new System.Drawing.Size(41, 27);
             this.txtFirstId.TabIndex = 1;
             this.txtFirstId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(191, 66);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PlaceholderText = "Correo@miumg.edu.gt";
-            this.txtEmail.Size = new System.Drawing.Size(209, 23);
-            this.txtEmail.TabIndex = 0;
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(107)))), ((int)(((byte)(153)))));
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(12, 493);
+            this.panel4.Location = new System.Drawing.Point(12, 463);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(926, 12);
+            this.panel4.Size = new System.Drawing.Size(953, 12);
             this.panel4.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(107)))), ((int)(((byte)(153)))));
-            this.ClientSize = new System.Drawing.Size(950, 505);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(977, 475);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -602,6 +560,7 @@ namespace ProyectoAvl_Examen
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Ingreso Alumnos";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -629,7 +588,6 @@ namespace ProyectoAvl_Examen
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSecondId;
         private System.Windows.Forms.TextBox txtFirstId;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtlab1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label9;
@@ -647,10 +605,6 @@ namespace ProyectoAvl_Examen
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button bntOrden;
         private System.Windows.Forms.Button btnPostOrden;
-        private System.Windows.Forms.Label lblAprobacion;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtPromedio;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -660,6 +614,7 @@ namespace ProyectoAvl_Examen
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCorreo;
     }
 }
 
