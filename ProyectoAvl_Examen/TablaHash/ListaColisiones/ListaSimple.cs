@@ -71,16 +71,5 @@ namespace ProyectoAvl_Examen.TablaHash.ListaColisiones
             return resultado;
         }
 
-
-
-        // //converId = temp.Dato = Juan = 108104;
-        // while (temp != null && !temp.Dato.ToString().Equals(pValor))
-        // {
-        //     temp = temp.Enlace;
-        //     posicion++;
-
-        // } 
-        ////return (temp == null) ? null : converId(temp.Dato.ToString());
-        // return (temp == null) ? null : temp.Dato;
     }
 }
