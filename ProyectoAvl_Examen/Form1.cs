@@ -21,10 +21,10 @@ namespace ProyectoAvl_Examen
         ArbolAvl miArbolEstudiante = new ArbolAvl();
 
         //Este objeto se utilizara para insertar y hacer busquedas en una tabla dinamica hash
-        TablaDispercion miTablaHashin = new TablaDispercion();
+        TablaDispercion miTablaHashin;
 
         string idEstudiante;
-
+        int cont = 0;
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace ProyectoAvl_Examen
        
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            ArbolAvl miArbol = new ArbolAvl();
             //Utilizamos esta funcion para abrir directorios en el escritorio
             OpenFileDialog abreArchivo = new OpenFileDialog();
 
@@ -50,14 +51,14 @@ namespace ProyectoAvl_Examen
                 //leemos la primera linea de codigo que es el nombre, al apellido
                 line = archivoAlumno.ReadLine();
            
-                //Recorrido de todo el txt
+                //Recorrido de todo el txt""
                 while ((line = archivoAlumno.ReadLine()) != null)
                 {
                     string[] wordSrings = line.Split(';', '-');
                     InformacionAlumno inforAlumno = new InformacionAlumno(wordSrings[0], wordSrings[1], wordSrings[2]
                      , wordSrings[3], wordSrings[4],
-                         Convert.ToInt32(wordSrings[5]), Convert.ToInt32(wordSrings[6]), Convert.ToInt32(wordSrings[7]),
-                          Convert.ToInt32(wordSrings[8]));
+                        wordSrings[5], wordSrings[6], wordSrings[7],
+                          wordSrings[8]);
                   
                     idEstudiante = wordSrings[3]+wordSrings[4];
  
@@ -65,7 +66,7 @@ namespace ProyectoAvl_Examen
                      miArbolEstudiante.insertar(inforAlumno);
 
                     //Insertamos a una tabla hash
-                    miTablaHashin.Insertar(inforAlumno,idEstudiante);
+                   
 
                     cont++;
 
@@ -79,23 +80,32 @@ namespace ProyectoAvl_Examen
         //Tipos de recorridos para mostrar la informacion
         private void btnPreorden_Click(object sender, EventArgs e)
         {
-            Imprimir(ArbolAvl.rcPreorden(miArbolEstudiante.raizArbol()),0);  
+            
+            Imprimir(ArbolAvl.rcPreorden(miArbolEstudiante.raizArbol()),0);
+            Imprimir(ArbolAvl.rcPreorden(miArbolEstudiante.raizArbol()), 3);
         }
         private void btnPostOrden_Click(object sender, EventArgs e)
         {
-            Imprimir(ArbolAvl.rcpostOrden(miArbolEstudiante.raizArbol()),0);       
+            Imprimir(ArbolAvl.rcpostOrden(miArbolEstudiante.raizArbol()),0);
+            Imprimir(ArbolAvl.rcpostOrden(miArbolEstudiante.raizArbol()), 3);
+
         }
         private void bntOrden_Click(object sender, EventArgs e)
         {
             Imprimir(ArbolAvl.rcInorden(miArbolEstudiante.raizArbol()),0);
+            Imprimir(ArbolAvl.rcInorden(miArbolEstudiante.raizArbol()), 3);
+
         }
-        public void Imprimir(string valor,int opcion) 
+        public void Imprimir(string valor, int opcion)
         {
-            int cont = 0, Aux = 0;
-            string[] wordSrings = valor.Split(',');
+            int cont = 0;
 
-            string[] wordSrings2 = valor.Split(',', ' ', '*');
+            //Divide la cadena
+            string[] wordSrings = valor.Split('`', ';');
 
+            string[] wordSrings2 = valor.Split(';', '_', '*');
+
+            //Aca muesta la informacion del recorrido del arbl
             if (opcion == 0)
             {
                 listBox1.Items.Clear();
@@ -109,15 +119,50 @@ namespace ProyectoAvl_Examen
                     }
                 }
             }
-            else if (opcion ==1) 
+            //Aca se imprime la informacion encontrada en la busqueda del usuario
+            else if (opcion == 1)
             {
-                texto(wordSrings2[1]+" "+wordSrings2[2]+" "+ wordSrings2[3] + " " + wordSrings2[4], 1);
-                texto(wordSrings2[5], 2); 
-                texto(wordSrings2[6], 3);
-                texto(wordSrings2[7], 4);
-                texto(wordSrings2[8], 5);
-                texto(wordSrings2[9], 6);
-          
+                texto(wordSrings2[1], 2);
+                texto(wordSrings2[2], 1);
+                texto(wordSrings2[3], 3);
+                texto(wordSrings2[4], 4);
+                texto(wordSrings2[5], 5);
+                texto(wordSrings2[6], 6);
+
+            }
+
+            else if (opcion == 3)
+            {
+                //Limpieza de la tabla hash
+                miTablaHashin = new TablaDispercion();
+
+                while (valor != "")
+                {
+                    string[] wordSrin = valor.Split(';', '-', '*','_', '`');
+
+                    //Los que esta haciendo aca es dividir la cadena eh insertarla en la clase informacion Alumno
+                    //Para posterior insertarlo a la tabla hash
+
+                    if (wordSrin[cont] != "")
+                    {
+                        string id = wordSrin[cont]; cont++;
+                        string id1 = wordSrin[cont]; cont++;
+                        string nombre = wordSrin[cont]; cont++;
+                        string apellido = wordSrin[cont]; cont++;
+                        string email = wordSrin[cont]; cont++;
+                        string lab = wordSrin[cont]; cont++;
+                        string lab1 = wordSrin[cont]; cont++;
+                        string lab2 = wordSrin[cont]; cont++;
+                        string lab3 = wordSrin[cont]; cont++;
+
+                        InformacionAlumno auxAlumno = new InformacionAlumno(apellido, nombre, email, id, id1, lab, lab1, lab2, lab3);
+
+                        string idPersona = id + id1;
+                        miTablaHashin.Insertar(auxAlumno, idPersona);
+                    }
+                    else
+                        valor = "";
+                }
             }
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -127,20 +172,27 @@ namespace ProyectoAvl_Examen
                 MessageBox.Show("Por favor carge los datos y vuelva a intentarlo", "Buscar estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            else if (txtFirstId.Text == "" || txtSecondId.Text == "") 
+            {
+                MessageBox.Show("Por favor digite el id del estudiante", "Buscar estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
             else
             {
                 //Creamos una variable para unir el id del estudiante 
                 string idEstudiante = txtFirstId.Text + txtSecondId.Text;
 
+                //Se implemento una busqueda utilizando la tabla hash
                 string datoEncontrado = (string)miTablaHashin.Buscar(idEstudiante);
 
+                //Si la cadena o string esta vacio o no trae nada de datos
                 if (datoEncontrado == null)
                 {
                     MessageBox.Show("No se encontro al estudiante", "Buscar estudiante", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
-                {
+                { 
                     Imprimir(datoEncontrado, 1);
                 }
             }

@@ -53,8 +53,8 @@ namespace ProyectoAvl_Examen.TablaHash.ListaColisiones
         public String datoConvert(string valor) 
         {
             string nuevoDato = valor;
-            string[] wordSrings = nuevoDato.Split('-', ' ');
-
+            string[] wordSrings = nuevoDato.Split('-', '_');
+        
             return wordSrings[0] + wordSrings[1];
         }
 

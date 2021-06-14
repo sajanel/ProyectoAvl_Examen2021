@@ -18,12 +18,12 @@ namespace ProyectoAvl_Examen.Estructua_Alumno
         public string secondIdAlumno { get; set; }
         public int nodosVisitados { get; set; }
 
-        public int labAlumno1,
+        public string labAlumno1,
             labAlumno2, labAlumno3, labAlumno4;
 
         //Creamos un constructor que contendra a todos los atributos antes mensionados 
         public InformacionAlumno(string apellidoAlumno, string nombreAlumno, string emailAlumno, 
-            string firstIdAlumno, string secondIdAlumno, int labAlumno1, int labAlumno2, int labAlumno3, int labAlumno4)
+            string firstIdAlumno, string secondIdAlumno, string labAlumno1, string labAlumno2, string labAlumno3, string labAlumno4)
         {
             this.nombreAlumno = nombreAlumno;
             this.apellidoAlumno = apellidoAlumno;
@@ -36,25 +36,8 @@ namespace ProyectoAvl_Examen.Estructua_Alumno
             this.labAlumno4 = labAlumno4;
         }
 
-        //Este construtor nos ayudara en el buscador para encontrar el id de los alumnos
-        public InformacionAlumno(string emailAlumno, string firstIdAlumno, string secondIdAlumno)
-        {
-            this.emailAlumno = emailAlumno;
-            this.firstIdAlumno = firstIdAlumno;
-            this.secondIdAlumno = secondIdAlumno;
+      
 
-        }
-        //Este comparador verifica que el correo del alumno
-        public InformacionAlumno(string emailAlumno)
-        {
-            this.emailAlumno = emailAlumno;
-           
-        }
-        
-
-
-        //Estas funciones son implementadas gracias a el comparador
- 
         //Se le envian dos parametros en el conteo de nodos y el dato a comprar
         public bool firstIdMayor(object q,int num)
         {
@@ -104,8 +87,8 @@ namespace ProyectoAvl_Examen.Estructua_Alumno
         {
             //return firstIdAlumno+"-"+secondIdAlumno+" " + nombreAlumno + ",";
            
-            return firstIdAlumno + "-" + secondIdAlumno + " " + nombreAlumno + "," + apellidoAlumno + "*" + emailAlumno + "*" +
-               labAlumno1 + "*" + labAlumno2 + "*" + labAlumno3 + "*" + labAlumno4+",";
+            return firstIdAlumno + "-" + secondIdAlumno + "_" + nombreAlumno + "`" + apellidoAlumno + "*" + emailAlumno + "*" +
+               labAlumno1 + "*" + labAlumno2 + "*" + labAlumno3 + "*" + labAlumno4+";";
         }
   
      
